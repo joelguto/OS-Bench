@@ -1,0 +1,58 @@
+{
+    "id": "086cab52-3d10-4bee-b52b-28e088af711a",
+    "snapshot": "gimp",
+    "instruction": "Convert the image photo.png to black and white, then export the grayscale image to the Desktop as gray_photo.png",
+    "source": "OSBench",
+    "trajectory": "trajectories/",
+    "config": [
+      {
+        "type": "download",
+        "parameters": {
+          "files": [
+            {
+              "url": "https://huggingface.co/datasets/joelguto/osworld_tasks_files/resolve/main/photo.png",
+              "path": "/home/user/Desktop/photo.png"
+            }
+          ]
+        }
+      },
+      {
+        "type": "launch",
+        "parameters": {
+          "command": ["gimp"]
+        }
+      }
+    ],
+    "related_apps": ["gimp"],
+    "evaluator": {
+      "func": "compare_images",
+      "result": {
+        "type": "vm_file",
+        "path": "/home/user/Desktop/gray_photo.png",
+        "dest": "gray_photo.png"
+      },
+      "expected": {
+        "type": "cloud_file",
+        "path": "https://huggingface.co/datasets/joelguto/osworld_tasks_files/resolve/main/golden_gray_photo.png",
+        "dest": "golden_gray_photo.png"
+      }
+    },
+    "proxy": false,
+    "fixed_ip": false,
+    "possibility_of_env_change": "low",
+    "model_pass_rate": {
+      "claude-4-sonnet-20250514": 0.8
+    },
+    "annotator_hints": [
+      "Step 1: Launch GIMP",
+      "Step 2: Open /home/user/Desktop/photo.png",
+      "Step 3: Convert the image to grayscale (black and white)",
+      "Step 4: Export the result to the Desktop as gray_photo.png"
+    ],
+    "knowledge_points": [
+      "GIMP basic usage",
+      "Grayscale conversion",
+      "Exporting images to Desktop"
+    ],
+    "coverage": "Convert an image to grayscale in GIMP and export it"
+  }
