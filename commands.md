@@ -1,0 +1,15 @@
+pg.click(960, 540)
+pg.hotkey("ctrl", "o")
+pg.press("tab")
+pg.press("tab")
+pg.press("tab")
+pg.press("tab")
+pg.press("tab")
+pg.press("tab")
+pg.press("down")
+pg.press("down")
+pg.press("down")
+pg.press("enter") (possibly)
+pg.hotkey("ctl", "l")
+
+
